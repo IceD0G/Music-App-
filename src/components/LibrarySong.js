@@ -25,7 +25,6 @@ const LibrarySong = ({
 		});
 		setSongs(newSongs);
 		if (isPlaying) audioRef.current.play();
-		//check if the song is playing
 	};
 	return (
 		<div

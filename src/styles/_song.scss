@@ -8,6 +8,17 @@
   img {
     width: 20%;
     border-radius: 50%;
+
+  }
+
+  .animate {
+    animation: roll 30s infinite linear;
+  }
+
+  @keyframes roll {
+    from {
+      transform: rotate(360deg);
+    }
   }
 
   h2 {

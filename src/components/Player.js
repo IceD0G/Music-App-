@@ -50,7 +50,10 @@ const Player = ({
 		audioRef.current.currentTime = e.target.value;
 		setSongInfo({ ...songInfo, currentTime: e.target.value });
 	};
-
+	const volumeHandler = e => {
+		audioRef.current.volume = e.target.value;
+		setSongInfo({ ...songInfo, volume: e.target.value });
+	};
 	const skipTrackHandler = async direction => {
 		let currentIndex = songs.findIndex(song => song.id === currentSong.id);
 		if (direction === 'skip-forward') {
@@ -112,6 +115,14 @@ const Player = ({
 					className='skip-forward'
 					size='2x'
 					icon={faAngleRight}
+				/>
+				<input
+					type='range'
+					min={0}
+					value={songInfo.volume}
+					max={1}
+					onChange={volumeHandler}
+					step={0.01}
 				/>
 			</div>
 		</div>
